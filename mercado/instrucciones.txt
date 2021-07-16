@@ -1,0 +1,6 @@
+scrappy startproject nombreProyecto
+
+
+despues de realizar todo lo que hago es colocar en la terminal este comando
+
+scrapy crawl mercado -t csv

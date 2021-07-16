@@ -1,0 +1,77 @@
+15:16:11,200 scrapy.utils.log INFO Scrapy 2.5.0 started (bot: as400)
+15:16:11,204 scrapy.utils.log INFO Versions: lxml 4.6.3.0, libxml2 2.9.5, cssselect 1.1.0, parsel 1.6.0, w3lib 1.22.0, Twisted 21.2.0, Python 3.9.1 (tags/v3.9.1:1e5d33e, Dec  7 2020, 17:08:21) [MSC v.1927 64 bit (AMD64)], pyOpenSSL 20.0.1 (OpenSSL 1.1.1k  25 Mar 2021), cryptography 3.4.7, Platform Windows-10-10.0.19041-SP0
+15:16:11,206 scrapy.utils.log DEBUG Using reactor: twisted.internet.selectreactor.SelectReactor
+15:16:11,211 scrapy.crawler INFO Overridden settings:
+{'BOT_NAME': 'as400',
+ 'NEWSPIDER_MODULE': 'as400.spiders',
+ 'ROBOTSTXT_OBEY': True,
+ 'SPIDER_MODULES': ['as400.spiders']}
+15:16:11,264 scrapy.extensions.telnet INFO Telnet Password: a80c92e46aeab815
+15:16:11,320 scrapy.middleware INFO Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+15:16:11,556 scrapy.middleware INFO Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+15:16:11,579 scrapy.middleware INFO Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+15:16:11,587 scrapy.middleware INFO Enabled item pipelines:
+[]
+15:16:11,588 scrapy.core.engine INFO Spider opened
+15:16:11,632 scrapy.extensions.logstats INFO Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+15:16:11,634 scrapy.extensions.telnet INFO Telnet console listening on 127.0.0.1:6023
+15:16:13,268 scrapy.core.engine DEBUG Crawled (404) <GET http://i0003.srv.skf.net:2004/robots.txt> (referer: None)
+15:16:13,270 protego DEBUG Rule at line 1 without any user agent to enforce it on.
+15:16:14,671 scrapy.downloadermiddlewares.redirect DEBUG Redirecting (302) to <GET http://i0003.srv.skf.net:2004/ibm/console/logon.jsp> from <GET http://i0003.srv.skf.net:2004/ibm/console/login.do?action=secure>
+15:16:15,390 scrapy.core.engine DEBUG Crawled (200) <GET http://i0003.srv.skf.net:2004/ibm/console/logon.jsp> (referer: None)
+15:16:15,519 scrapy.core.scraper ERROR Spider error processing <GET http://i0003.srv.skf.net:2004/ibm/console/logon.jsp> (referer: None)
+Traceback (most recent call last):
+  File "c:\users\novasrodrigo\desktop\scrappy\venv\lib\site-packages\twisted\internet\defer.py", line 662, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "c:\users\novasrodrigo\desktop\scrappy\venv\lib\site-packages\scrapy\spiders\__init__.py", line 90, in _parse
+    return self.parse(response, **kwargs)
+  File "C:\Users\novasrodrigo\Desktop\scrappy\i003\as400\as400\spiders\as400.py", line 18, in parse
+    logard.info(str(response.body))
+AttributeError: 'NoneType' object has no attribute 'info'
+15:16:15,638 scrapy.core.engine INFO Closing spider (finished)
+15:16:15,641 scrapy.statscollectors INFO Dumping Scrapy stats:
+{'downloader/request_bytes': 996,
+ 'downloader/request_count': 3,
+ 'downloader/request_method_count/GET': 3,
+ 'downloader/response_bytes': 13509,
+ 'downloader/response_count': 3,
+ 'downloader/response_status_count/200': 1,
+ 'downloader/response_status_count/302': 1,
+ 'downloader/response_status_count/404': 1,
+ 'elapsed_time_seconds': 4.007799,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2021, 4, 22, 18, 16, 15, 640047),
+ 'log_count/DEBUG': 4,
+ 'log_count/ERROR': 1,
+ 'log_count/INFO': 10,
+ 'response_received_count': 2,
+ 'robotstxt/request_count': 1,
+ 'robotstxt/response_count': 1,
+ 'robotstxt/response_status_count/404': 1,
+ 'scheduler/dequeued': 2,
+ 'scheduler/dequeued/memory': 2,
+ 'scheduler/enqueued': 2,
+ 'scheduler/enqueued/memory': 2,
+ 'spider_exceptions/AttributeError': 1,
+ 'start_time': datetime.datetime(2021, 4, 22, 18, 16, 11, 632248)}
+15:16:15,648 scrapy.core.engine INFO Spider closed (finished)
